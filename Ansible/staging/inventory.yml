@@ -1,0 +1,7 @@
+web:
+  hosts:
+    nginx:
+      ansible_port : 2200
+      ansible_host : 10.0.2.15
+      ansible_user : vagrant
+      ansible_private_key_file : C:/Users/kompukter/Desktop/otus/ansible/Ansible/.vagrant/machines/nginx/virtualbox/private_key
