@@ -4,3 +4,16 @@ $ sudo apt-add-repository ppa:ansible/ansible
 $ sudo apt update
 
 $ sudo apt install ansible
+
+
+
+
+
+if wsl ansible -m ping - error
+I solved it by creating /etc/wsl.conf with the following content:
+# Enable extra metadata options by default
+[automount]
+enabled = true
+root = /mnt/
+options = "metadata,umask=77,fmask=11"
+mountFsTab = false
