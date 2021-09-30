@@ -1,9 +1,7 @@
 - name: NGINX | Install and configure NGINX
   hosts: nginx
   become: true
-  vars:
-   nginx_listen_port: 8080
-  
+   
   tasks:
     - name: NGINX | Install EPEL Repo package from standart repo
       yum:
@@ -31,15 +29,3 @@
         - reload nginx
       tags:
         - nginx-configuration
-  
-  handlers:
-    - name: restart nginx
-      systemd:
-        name: nginx
-        state: restarted
-        enabled: yes
-
-    - name: reload nginx
-      systemd:
-        name: nginx
-        state: reloaded
